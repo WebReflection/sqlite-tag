@@ -1,0 +1,25 @@
+{
+  "name": "sqlite-tag",
+  "version": "0.0.0",
+  "description": "Template literal tag based sqlite3 queries",
+  "main": "index.js",
+  "scripts": {
+    "build": "ascjs --no-default esm cjs && npm test",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "test": "nyc node test/index.js"
+  },
+  "keywords": [
+    "sqlite",
+    "tag",
+    "template",
+    "literal"
+  ],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "devDependencies": {
+    "ascjs": "^3.1.2",
+    "coveralls": "^3.0.9",
+    "nyc": "^15.0.0",
+    "sqlite3": "^4.1.1"
+  }
+}
