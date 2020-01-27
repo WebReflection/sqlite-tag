@@ -69,3 +69,12 @@ This utility aim is to provide a mechanism that would not affect the query itsel
 for (let i = 0; i < 3; i++)
   await query`INSERT INTO ${raw`table_${i}`} VALUES (${i})`;
 ```
+
+The resulting operation, behind the scene, would be the following one:
+```js
+db.run('INSERT INTO table_0 VALUES (?)', [0]);
+db.run('INSERT INTO table_1 VALUES (?)', [1]);
+db.run('INSERT INTO table_2 VALUES (?)', [2]);
+```
+
+This also should explain how this library works: it's safe by default, as every hole becomes automatically a parameter, so that SQL injections are implicitly avoided.
