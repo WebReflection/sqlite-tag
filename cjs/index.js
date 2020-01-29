@@ -24,9 +24,8 @@ const ditchRaws = (tpl, values) => {
     if (value instanceof Raw)
       sql[j] += value.sql + tpl[i];
     else {
-      params.push(value);
+      j = params.push(value);
       sql.push(tpl[i]);
-      j++;
     }
   }
   return {sql, params};
