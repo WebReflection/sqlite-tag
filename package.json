@@ -1,6 +1,6 @@
 {
   "name": "sqlite-tag",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Template literal tag based sqlite3 queries",
   "main": "cjs/index.js",
   "module": "esm/index.js",
