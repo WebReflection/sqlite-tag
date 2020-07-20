@@ -2,8 +2,13 @@
   "name": "sqlite-tag",
   "version": "0.2.1",
   "description": "Template literal tag based sqlite3 queries",
-  "main": "cjs/index.js",
-  "module": "esm/index.js",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "type": "module",
+  "exports": {
+    "import": "./esm/index.js",
+    "default": "./cjs/index.js"
+  },
   "scripts": {
     "build": "ascjs --no-default esm cjs && npm test",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
