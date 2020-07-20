@@ -30,8 +30,16 @@ const {all, get, query, raw} = SQLiteTag(db);
   try {
     await query`INSERT INTO shenanigans VALUES (1, 2, 3)`;
   }
-  catch ({code}) {
-    console.log(' ', code);
+  catch ({message}) {
+    console.log(' ', message);
+  }
+
+  console.log('✔', 'SQL injection safe');
+  try {
+    await query`INSERT INTO shenanigans VALUES (?, ${2}, ${3})`;
+  }
+  catch ({message}) {
+    console.log(' ', message);
   }
 
   db.close();
