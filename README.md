@@ -6,6 +6,8 @@
 
 Template literal tag based sqlite3 queries.
 
+Available for [PostgreSQL](https://github.com/WebReflection/pg-tag/#readme) too.
+
 ```js
 const sqlite3 = require('sqlite3').verbose();
 const SQLiteTag = require('sqlite-tag');
