@@ -18,9 +18,13 @@
   "author": "Andrea Giammarchi",
   "license": "ISC",
   "devDependencies": {
-    "ascjs": "^3.1.2",
-    "coveralls": "^3.0.9",
-    "nyc": "^15.0.0",
-    "sqlite3": "^4.1.1"
+    "ascjs": "^4.0.1",
+    "coveralls": "^3.1.0",
+    "nyc": "^15.1.0",
+    "sqlite3": "^5.0.0"
+  },
+  "dependencies": {
+    "plain-tag": "^0.1.2",
+    "static-params": "^0.1.3"
   }
 }
