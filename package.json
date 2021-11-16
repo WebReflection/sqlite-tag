@@ -11,8 +11,8 @@
   },
   "scripts": {
     "build": "ascjs --no-default esm cjs && npm test",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "test": "nyc node test/index.js"
+    "coveralls": "c8 report --reporter=text-lcov | coveralls",
+    "test": "c8 node test/index.js"
   },
   "keywords": [
     "sqlite",
@@ -23,13 +23,13 @@
   "author": "Andrea Giammarchi",
   "license": "ISC",
   "devDependencies": {
-    "ascjs": "^4.0.1",
-    "coveralls": "^3.1.0",
-    "nyc": "^15.1.0",
-    "sqlite3": "^5.0.0"
+    "ascjs": "^5.0.1",
+    "c8": "^7.10.0",
+    "coveralls": "^3.1.1",
+    "sqlite3": "^5.0.2"
   },
   "dependencies": {
-    "plain-tag": "^0.1.2",
-    "static-params": "^0.1.3"
+    "plain-tag": "^0.1.3",
+    "static-params": "^0.2.1"
   }
 }
