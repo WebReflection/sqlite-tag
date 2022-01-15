@@ -13,15 +13,17 @@ const sqlite3 = require('sqlite3').verbose();
 const SQLiteTag = require('sqlite-tag');
 
 const db = new sqlite3.Database(':memory:');
-const {all, get, query, raw} = SQLiteTag(db);
+const {all, get, query, raw, transaction} = SQLiteTag(db);
 
 (async () => {
   console.log('✔', 'table creation');
   await query`CREATE TABLE ${raw`lorem`} (info TEXT)`;
 
-  console.log('✔', 'multiple inserts (no statement)');
+  console.log('✔', 'multiple inserts (transaction)');
+  const insert = transaction();
   for (let i = 0; i < 10; i++)
-    await query`INSERT INTO lorem VALUES (${'Ipsum ' + i})`;
+    insert`INSERT INTO lorem VALUES (${'Ipsum ' + i})`;
+  await insert.commit();
 
   console.log('✔', 'Single row');
   const row = await get`
