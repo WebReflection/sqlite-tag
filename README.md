@@ -39,6 +39,11 @@ const {all, get, query, raw, transaction} = SQLiteTag(db);
   for (const row of rows)
     console.log(' ', row.id + ": " + row.info);
 
+  // automatically and safely expanded as ?, ?
+  const list = ['Ipsum 2', 'Ipsum 3'];
+  console.log('✔', 'IN clause');
+  console.log(' ', await all`SELECT * FROM lorem WHERE info IN (${list})`);
+
   console.log('✔', 'Error handling');
   try {
     await query`INSERT INTO shenanigans VALUES (1, 2, 3)`;
