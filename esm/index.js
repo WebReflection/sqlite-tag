@@ -1,5 +1,5 @@
 import plain from 'plain-tag';
-import {asStatic, asParams} from 'static-params';
+import {asStatic, asParams} from 'static-params/sql';
 
 const {defineProperty} = Object;
 

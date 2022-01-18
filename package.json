@@ -30,6 +30,6 @@
   },
   "dependencies": {
     "plain-tag": "^0.1.3",
-    "static-params": "^0.2.1"
+    "static-params": "^0.3.0"
   }
 }
