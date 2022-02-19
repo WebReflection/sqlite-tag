@@ -2,7 +2,7 @@ const sqlite3 = require('sqlite3').verbose();
 const SQLiteTag = require('../cjs');
 
 const db = new sqlite3.Database(':memory:');
-const {all, get, query, raw, transaction} = SQLiteTag(db);
+const {all, get, query, raw, transaction, close} = SQLiteTag(db);
 
 (async () => {
   console.log('✔', 'table creation');
@@ -47,5 +47,5 @@ const {all, get, query, raw, transaction} = SQLiteTag(db);
     console.log(' ', message);
   }
 
-  db.close();
+  close();
 })();

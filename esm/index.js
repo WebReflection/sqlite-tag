@@ -38,6 +38,7 @@ export default function SQLiteTag(db) {
     all: create(db, 'all'),
     get: create(db, 'get'),
     raw: (tpl, ...values) => asStatic(plain(tpl, ...values)),
+    close: () => db.close(),
     query
   };
 };
